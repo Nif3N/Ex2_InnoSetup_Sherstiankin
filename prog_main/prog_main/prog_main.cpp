@@ -1,7 +1,20 @@
 #include <iostream>
-
+/**
+    @file		prog_main.cpp
+    @brief		Файл исходного кода
+    @copyright	ВоГУ
+    @author		Шерстянкин Н. Р.
+    @date		22-05-2024
+    @version	1.0.0
+*/
 using namespace std;
 
+
+/// Функция ввода числа X
+/**
+    Вводится значение переменной num_X и проверяется корректность ввода
+    \param num_X натуральное число X
+*/
 void EnterX(int &num_X)
 {
     do {
@@ -9,6 +22,12 @@ void EnterX(int &num_X)
         cin >> num_X;
     } while (num_X <= 0);
 }
+
+/// Функция ввода числа N
+/**
+    Вводится значение переменной num_N и проверяется корректность ввода
+    \param num_N натуральное число для определения произведения последних N цифр числа X
+*/
 void EnterN(int &num_N, int &num_X)
 {
     do {
@@ -16,6 +35,11 @@ void EnterN(int &num_N, int &num_X)
         cin >> num_N;
     } while (num_N >= num_X || num_N <= 0);
 }
+
+/// Функция, вычисляющая произведение последних N цифр натурального числа X
+/**
+    Находим последнюю цифру числа X при помощи остатка от деления на 10, затем делим число X на 10, чтобы получить следующую цифру и так N раз
+*/
 void MultiplyN(int num_X, int num_N)
 {
     int res = 1;
@@ -28,6 +52,11 @@ void MultiplyN(int num_X, int num_N)
     }
     cout << "Произведение последних N цифр: " << res << endl;
 }
+
+/// Функция для определения кол-ва цифр числа X
+/**
+    Делим число X и увеличиваем переменную count на 1 до тех пор, пока результат деления не будет равным 0
+*/
 void CountNumX(int num_X)
 {
     int count = 1;
@@ -41,22 +70,9 @@ void CountNumX(int num_X)
 
 int main()
 {
-<<<<<<< HEAD
     setlocale(LC_ALL, "rus");
-=======
-<<<<<<< HEAD
-    setlocale(LC_ALL, "rus");
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    setlocale(LC_ALL, "rus");
->>>>>>> 969c4fe1bc45bbfe24f07870ada95b5c9e14ea0b
-=======
-    setlocale(LC_ALL, "rus");
->>>>>>> origin/main
->>>>>>> 19c2d45274411776d18a9d90124981b2e95f5ba7
->>>>>>> 77d447eba2512ee84beb50f90742ce1b947ca743
+
+/// Вывод номеров функций с их описанием
     cout << "1. Ввести натуральное число X" << endl;
     cout << "2. Ввести цифру N (которая меньше числа разрядов числа X)" << endl;
     cout << "3. Определить произведение последних N цифр натурального числа X" << endl;
@@ -64,25 +80,16 @@ int main()
     cout << "Введите номер функции (1-4) или 0 для выхода: ";
     int k, x, n;
     cin >> k;
+/// Выбор функции
+/**
+    Выполняется определенная функция в зависимости от того, какой номер мы указали
+*/
     switch (k) {
     case 1: 
         EnterX(x);
         break;
     case 2:
-<<<<<<< HEAD
         EnterN(n, x);
-=======
-        EnterN(n);
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 969c4fe1bc45bbfe24f07870ada95b5c9e14ea0b
-=======
->>>>>>> origin/main
->>>>>>> 19c2d45274411776d18a9d90124981b2e95f5ba7
->>>>>>> 77d447eba2512ee84beb50f90742ce1b947ca743
         break;
     case 3: 
         MultiplyN(x, n);
